@@ -20,6 +20,11 @@ body {
   height: 100%;
 }
 
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
 body {
   margin: 0;
   color: var(--text);
@@ -31,6 +36,7 @@ body {
     "Apple Color Emoji", "Segoe UI Emoji";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
 }
 
 .page {
@@ -49,6 +55,7 @@ body {
   border-radius: var(--radius);
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.86));
   border: 1px solid rgba(198, 167, 94, 0.34);
+  overflow: clip;
   box-shadow:
     0 24px 60px rgba(0, 0, 0, 0.12),
     0 0 0 1px rgba(0, 0, 0, 0.03) inset;
@@ -59,6 +66,7 @@ body {
   display: grid;
   gap: 12px;
   padding-bottom: 18px;
+  overflow-wrap: anywhere;
 }
 
 .title {
@@ -80,16 +88,22 @@ body {
 
 .tagline {
   margin: 0;
+  max-width: 48ch;
+  margin-inline: auto;
   color: var(--muted);
   font-size: clamp(1rem, 2.6vw, 1.15rem);
   letter-spacing: 0.02em;
+  text-wrap: balance;
 }
 
 .subtagline {
   margin: -4px 0 0;
+  max-width: 54ch;
+  margin-inline: auto;
   color: rgba(10, 10, 10, 0.54);
   font-size: clamp(0.92rem, 2.3vw, 1rem);
   letter-spacing: 0.01em;
+  text-wrap: balance;
 }
 
 .promo {
@@ -200,7 +214,7 @@ body {
   }
 
   .card {
-    padding: 22px 18px;
+    padding: 22px 20px;
     border-radius: 18px;
   }
 
